@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>HIV Ticker</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+    
+    <link rel="stylesheet" href="css/styl.css">
+
+
+<html>
+    <head>
+        <body>
+            
+            <div class="container">
+
+<h1>Number of People Worldwide Living with HIV</h1>
+
+<p>Every minute four people contract HIV. Severnty percent of them are in Sub-Sahara Africa.</p>
+
+<div class="row">
+    <div class="col-md-4">
+                
+<div class="countdown">60
+</div>
+    </div>
+
+</div>
+<div id="counter"></div>
+            
+            <div id="clarification">
+            <p style="font-size: 10px">*This is an estimate based off the WHO organization's count on people living with HIV as of 2013</p>
+            </div>
+            </div>
+
+<script>
+$(document).ready(function() {
+    
+
+  // Function to update counters on all elements with class counter
+  	var countdowns = $('.countdown'),
+  		updateInterval,
+  		countDelay = 1000,
+  		resetDelay = 1000;
+
+	var doUpdate = function() {
+		countdowns.each(function() {
+			var count = parseInt($(this).html());
+			if (count !== 0)
+				$(this).html(count - 1);
+			else
+				clearInterval(updateInterval);
+		});
+	};
+
+	var resetCounters = function() {
+		countdowns.each(function(){
+			$(this).html('60');
+		});
+		startCountdown();
+	}
+
+	var startCountdown = function() {
+		updateInterval = setInterval(doUpdate, countDelay);  	
+	}
+
+	startCountdown();
+	minuteInterval = setInterval(resetCounters, resetDelay);
+        
+        
+var START_DATE = new Date("March 9, 2015 6:07:00"); // put in the starting date here
+var INTERVAL = 60; // in seconds
+var INCREMENT = 4; // increase per tick
+var START_VALUE = 37080500; // initial value when it's the start date
+var count = 0;
+
+
+ var msInterval = INTERVAL * 1000;
+ var now = new Date();
+ count = parseInt((now - START_DATE)/msInterval) * INCREMENT + START_VALUE;
+ document.getElementById('counter').innerHTML = count;
+
+ window.setInterval( function(){
+    count += INCREMENT; 
+    document.getElementById('counter').innerHTML = Humanize.formatNumber(count);
+ }, msInterval);
+    
+});
+    
+
+</script>
+        </body>
+    </head>
