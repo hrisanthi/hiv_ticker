@@ -1,0 +1,43 @@
+body{
+    font-family: "Montserrat";
+}
+
+h2{
+    color: white;
+}
+
+p{
+    color: white;
+}
+
+
+.container{
+    min-width: 200px;
+    max-width: 750px;
+    min-height: 250px;
+    max-height: 500px;
+    padding: 5px 5px 0px 5px;
+    background-color: #386f7f;
+    position: relative;
+}
+
+.countdown{
+    float: left;
+    font-size: 50px;
+    color: white;
+    position: absolute;
+    
+
+}
+
+#counter{
+    float: right;
+    font-size: 50px;
+    color: white;
+    padding-left: 30px;
+    border-left: solid 5px white;
+}
+
+#clarification{
+    font-size: 10px;
+}
